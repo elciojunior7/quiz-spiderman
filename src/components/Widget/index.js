@@ -48,4 +48,19 @@ Widget.Content = styled.div`
   }
 `;
 
+Widget.Action = styled.button`
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  color: white;
+  border: none;
+  display:block;
+  padding: 10px 30px;
+  font-size: 90%;
+  background-color: ${({ theme }) => theme.colors.primary};
+  
+  * {
+    margin: 0;
+  }
+`;
+
 export default Widget;

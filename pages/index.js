@@ -31,6 +31,11 @@ export default function Home() {
             </Widget.Header>
             <Widget.Content>
               <p>{db.description}</p>
+              <a href="/quiz">
+                <Widget.Action>  
+                  <span>Responder</span>
+                </Widget.Action>
+              </a>
             </Widget.Content>
           </Widget>
 
