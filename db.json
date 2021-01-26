@@ -1,0 +1,45 @@
+{
+    "bg": "https://i.pinimg.com/originals/f0/3d/e1/f03de1a604d540a1a6e9c03a0d4274ee.jpg?1579984545?resize=1536%2C1208&ssl=1",
+    "title": "Quiz do Aranha",
+    "description": "O quanto você sabe sobre o Homem-Aranha? Descubra agora",
+    "questions": [
+      {
+        "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+        "title": "Qual é o nome da tia do Homem-Aranha original?",
+        "description": "Essa é pra aquecer",
+        "answer": 1,
+        "alternatives": [
+          "Tia",
+          "May Parker",
+          "July Parker",
+          "May Morales"
+        ]
+      },
+      {
+        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+        "title": "Quando Peter Parker foi picado pela aranha que o fez desenvolver poderes?",
+        "description": "Faz tempo em haha",
+        "answer": 1,
+        "alternatives": [
+            "Fase adulta",
+            "Adolescente",
+            "Criança",
+            "Nasceu com poderes"
+          ]
+      }
+    ],
+    "external": [
+      ""
+    ],
+    "theme": {
+      "colors": {
+        "primary": "#B11313",
+        "secondary": "#0648a9",
+        "mainBg": "#12234e",
+        "contrastText": "#FFFFFF",
+        "wrong": "#FF5722",
+        "success": "#4CAF50"
+      },
+      "borderRadius": "4px"
+    }
+  }
