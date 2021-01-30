@@ -1,11 +1,15 @@
-import styled from 'styled-components'
+import React, { useState } from 'react';
+import styled from 'styled-components';
+// eslint-disable-next-line import/no-unresolved
+import { useRouter } from 'next/router';
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
+import Widget from '../src/components/Widget';
+import QuizLogo from '../src/components/QuizLogo';
+import QuizBackground from '../src/components/QuizBackground';
+import Footer from '../src/components/Footer';
+import GitHubCorner from '../src/components/GitHubCorner';
 import db from '../db.json';
-import Widget from '../src/components/Widget'
-import QuizLogo from '../src/components/QuizLogo'
-import QuizBackground from '../src/components/QuizBackground'
-import Footer from '../src/components/Footer'
-import GitHubCorner from '../src/components/GitHubCorner'
-import Header from '../src/components/Header'
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -19,9 +23,16 @@ export const QuizContainer = styled.div`
 `;
 
 export default function Home() {
+  const router = useRouter();
+  const [name, setName] = useState('');
+
+  function submitForm(e) {
+    e.preventDefault();
+    router.push(`/quiz?name=${name}`);
+  }
+
   return (
     <>
-      <Header />
       <QuizBackground backgroundImage={db.bg}>
         <QuizContainer>
           <QuizLogo />
@@ -31,11 +42,17 @@ export default function Home() {
             </Widget.Header>
             <Widget.Content>
               <p>{db.description}</p>
-              <a href="/quiz">
-                <Widget.Action>  
-                  <span>Responder</span>
-                </Widget.Action>
-              </a>
+              <form onSubmit={submitForm}>
+                <Input
+                  name="username"
+                  value={name}
+                  placeholder="Qual seu alter ego? Guardamos segredo"
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <Button type="submit" disabled={name.length === 0}>
+                  {`Bora ${name}`}
+                </Button>
+              </form>
             </Widget.Content>
           </Widget>
 
