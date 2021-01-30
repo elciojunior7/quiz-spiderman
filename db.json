@@ -29,13 +29,14 @@
       }
     ],
     "external": [
-      ""
+      "https://aluraquiz-css.omariosouto.vercel.app/",
+      "https://aluraquiz-marvel.omariosouto.vercel.app/"
     ],
     "theme": {
       "colors": {
         "primary": "#B11313",
         "secondary": "#0648a9",
-        "mainBg": "#12234e",
+        "mainBg": "transparent",
         "contrastText": "#FFFFFF",
         "wrong": "#3e0715 ",
         "success": "#4CAF50"
