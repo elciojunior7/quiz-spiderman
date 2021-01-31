@@ -4,6 +4,18 @@
     "description": "O quanto você sabe sobre o Homem-Aranha? Descubra agora",
     "questions": [
       {
+        "image": "https://media.giphy.com/media/8GIrp9PyxMHbq/giphy.gif",
+        "title": "Quando Peter Parker foi picado pela aranha que o fez desenvolver poderes?",
+        "description": "Faz tempo em haha",
+        "answer": 1,
+        "alternatives": [
+            "Fase adulta",
+            "Adolescente",
+            "Criança",
+            "Nasceu com poderes"
+          ]
+      },
+      {
         "image": "https://media.giphy.com/media/TKFhgx0ttfazX78TxV/giphy.gif",
         "title": "Qual é o nome da tia do Homem-Aranha original?",
         "description": "Essa é pra aquecer",
@@ -16,15 +28,111 @@
         ]
       },
       {
-        "image": "https://media.giphy.com/media/8GIrp9PyxMHbq/giphy.gif",
-        "title": "Quando Peter Parker foi picado pela aranha que o fez desenvolver poderes?",
-        "description": "Faz tempo em haha",
+        "image": "https://media.giphy.com/media/10HacXwBbnkUec/source.gif",
+        "title": "Em qual cidade o Homem-Aranha mora e defende como herói?",
+        "description": "Geografia do herói",
+        "answer": 2,
+        "alternatives": [
+            "Los Angeles",
+            "Washington",
+            "Nova York",
+            "Boston"
+          ]
+      },
+      {
+        "image": "https://media.giphy.com/media/8pwwx7jdy3lkI/giphy.gif",
+        "title": "E qual bairro/distrito o herói Peter Parker nasceu e viveu (dependendo a história, ainda vive) com sua tia ?",
+        "description": "Essa já é mais complicada",
+        "answer": 0,
+        "alternatives": [
+            "Queens",
+            "Brooklyn",
+            "Hollywood",
+            "Manhattan"
+          ]
+      },
+      {
+        "image": "https://media.giphy.com/media/l36kU80xPf0ojG0Erg/giphy.gif",
+        "title": "Quais personagens abaixo já atuaram como o Amigão da Vizinhança (de alguma forma) no lugar de Peter Parker?",
+        "description": "Pode ser nos quadrinhos, tv ou filme",
+        "answer": 3,
+        "alternatives": [
+            "Miles Morales e Norman Osborn",
+            "Logan e May Parker",
+            "Gwen Stacy e Mary Jane Watson",
+            "Dr Otto Octavius e Miles Morales"
+          ]
+      },
+      {
+        "image": "https://media.giphy.com/media/l0IsJ1sCTKYu2Rm3S/giphy.gif",
+        "title": "O ator Tom Holland interpretou o Homem-Aranha em quantos filmes, já exibidos, no total?",
+        "description": "Ah, aparições contam também",
+        "answer": 0,
+        "alternatives": [
+            "5",
+            "2",
+            "3",
+            "8"
+          ]
+      },
+      {
+        "image": "https://media.giphy.com/media/l1J9IQUHEAj42D5QI/giphy.gif",
+        "title": "A atriz Emma Stone deu vida a personagem Gwen Stacy nos cinemas. No filme O Espetacular Homem-Aranha 2 - A Ameaça de Electro, ela acaba morta em uma luta do Homem-Aranha contra..?",
+        "description": "=[",
+        "answer": 2,
+        "alternatives": [
+            "Abutre",
+            "Electro",
+            "Duende Verde",
+            "Galactus"
+          ]
+      },
+      {
+        "image": "https://media.giphy.com/media/WOZ0AZQJbVMXanU2Ny/giphy.gif",
+        "title": "Nos quadrinhos, Peter Parker já foi casado uma vez. Com quem foi o matrimônio?",
+        "description": "A história é considerada um clássico e se chama 'O casamento do Homem-Aranha'",
+        "answer": 3,
+        "alternatives": [
+            "Deadpool",
+            "Gwen Stacy",
+            "Felícia Hardy (Gata Negra)",
+            "Mary Jane"
+          ]
+      },
+      {
+        "image": "https://media.giphy.com/media/bEuAEVpadQQddoTK0Q/giphy.gif",
+        "title": "Quais personagens abaixo fazem parte da galeria de vilões do herói aracnídeo?",
+        "description": "Só os 'brabos'",
+        "answer": 0,
+        "alternatives": [
+            "Dr Octopus, Venom, Duende Macabro",
+            "Coringa, Lex Luthor, Magnetto",
+            "Duende Verde, Zoom, Rhino",
+            "Gorila Grodd, Duende Verde, Venom"
+          ]
+      },
+      {
+        "image": "https://media.giphy.com/media/l46CcnpJzfb6SfLbO/giphy.gif",
+        "title": "Marvel's Spider-man é um jogo de PlayStation 4 que foi indicado como jogo do ano. Em qual ano isso aconteceu?",
+        "description": "Naquele ano, God of War venceu a disputa",
+        "answer": 2,
+        "alternatives": [
+            "2015",
+            "2019",
+            "2018",
+            "2010"
+          ]
+      },
+      {
+        "image": "https://media.giphy.com/media/9r75CL4HcusetkC3d4/giphy.gif",
+        "title": "Quem são considerados os criadores do Homem-Aranha?",
+        "description": "Lendas",
         "answer": 1,
         "alternatives": [
-            "Fase adulta",
-            "Adolescente",
-            "Criança",
-            "Nasceu com poderes"
+            "Stan Lee e Jack Kirby",
+            "Steve Ditko e Stan Lee",
+            "Ben Watson e Stan Parker",
+            "Bob Kane e Bill Finger"
           ]
       }
     ],

@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
 // import db from '../../../db.json';
 import Button from '../../components/Button';
 import GitHubCorner from '../../components/GitHubCorner';
@@ -9,6 +10,9 @@ import QuizLogo from '../../components/QuizLogo';
 import QuizBackground from '../../components/QuizBackground';
 import Widget from '../../components/Widget';
 import AlternativeForm from '../../components/AlternativeForm';
+import BackLinkArrow from '../../components/BackLinkArrow';
+import Lottie from 'react-lottie';
+import animationData from '../../../loading.json'
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -22,32 +26,31 @@ export const QuizContainer = styled.div`
 `;
 
 function ResultWidget({ result }) {
+  const router = useRouter();
+  const playername = router.query.name;
   return (
     <Widget>
       <Widget.Header>
-        Carregando...
+        <BackLinkArrow href="/" />
+        {`${playername}, você acertou
+            ${result.filter((currentResult) => currentResult).length}
+          pergunta(s)`}
       </Widget.Header>
 
       <Widget.Content>
-        <p>
-          {/* {result.reduce((currentSum, currentResult) => {
-             const sum = currentResult === true ? currentSum + 1 : currentSum;
-             return sum;
-            }, 0)}
-          */}
-          {`Você acertou
-            ${result.filter((currentResult) => currentResult).length}
-          pergunta(s)`}
-        </p>
         <table>
-          {result.map((r, index) => (
-            <tr>
-              {`Pergunta
-              ${index + 1}
-              =`}
-              {r === true ? ' Acertou' : ' Errou'}
-            </tr>
-          ))}
+          <tbody>
+            {result.map((r, index) => (
+              <tr key={index}>
+                <td>
+                  {`Pergunta
+                  ${index + 1}
+                  =`}
+                  {r === true ? ' Acertou' : ' Errou'}
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </Widget.Content>
     </Widget>
@@ -55,6 +58,14 @@ function ResultWidget({ result }) {
 }
 
 function LoadingWidget() {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true, 
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
   return (
     <Widget>
       <Widget.Header>
@@ -62,7 +73,10 @@ function LoadingWidget() {
       </Widget.Header>
 
       <Widget.Content>
-        [Desafio do Loading]
+        <Lottie options={defaultOptions}
+          height={300}
+          width={300}
+        />
       </Widget.Content>
     </Widget>
   );
@@ -79,10 +93,12 @@ function QuestionWidget({
   const [isOptionSubmitted, setIsOptionSubmited] = useState(false);
   const [selectedOption, setSelectedOption] = useState();
   const isCorrect = selectedOption === question.answer;
+  const router = useRouter();
+  const playername = router.query.name;
   return (
     <Widget>
       <Widget.Header>
-        {/* <BackLinkArrow href="/" /> */}
+        <BackLinkArrow href="/" />
         <h3>
           {`Pergunta ${questionIndex + 1} de ${totalQuestions}`}
         </h3>
@@ -135,6 +151,7 @@ function QuestionWidget({
                   name={questionId}
                   onChange={() => setSelectedOption(alternativeIndex)}
                   type="radio"
+                  checked={false}
                 />
                 {alternative}
               </Widget.Topic>
@@ -144,8 +161,8 @@ function QuestionWidget({
           <Button type="submit" disabled={selectedOption === undefined}>
             Confirmar
           </Button>
-          {isOptionSubmitted && isCorrect && <p>Boa, acertou em cheio</p>}
-          {isOptionSubmitted && !isCorrect && <p>Essa você errou</p>}
+          {isOptionSubmitted && isCorrect && <p className='success'>Boa {playername}, acertou em cheio</p>}
+          {isOptionSubmitted && !isCorrect && <p className='failed'>{playername}, essa você errou ;/</p>}
         </AlternativeForm>
       </Widget.Content>
     </Widget>
@@ -184,7 +201,10 @@ export default function Home({ externalQuestions, externalBg }) {
     if (nextQuestion < totalQuestions) {
       setCurrentQuestion(nextQuestion);
     } else {
-      setScreenState(screenStates.RESULT);
+      setScreenState(screenStates.LOADING);
+      setTimeout(() => {
+        setScreenState(screenStates.RESULT);
+      }, 1500);
     }
   }
 

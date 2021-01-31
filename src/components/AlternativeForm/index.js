@@ -19,6 +19,11 @@ const AlternativesForm = styled.form`
   button {
     margin-top: 24px;
   }
+  p {
+    &.success {
+      color: ${({ theme }) => theme.colors.success};
+    }
+  }
 `;
 
 export default AlternativesForm;
